@@ -246,4 +246,98 @@ console.log(tri.calculateArea());
 let cir = new Oval(3.5, 3.65);
 console.log(cir.calculateArea());
 */
+/*Problem Set 3: Employee & Manager Salary
+class Employee{
+    constructor(legalName, salary){
+        this.legalName = legalName;
+        this.salary = salary;
+    }
+    get name(){
+        return this.legalName;
+    }
+    get monthlySalary(){
+        return this.salary;
+    }
+    calculateAnnualSalary(){
+        return this.monthlySalary * 12;
+    }
+}
+class Manager extends Employee{
+    constructor(legalName, salary, department){
+        super(legalName, salary);
+        this.department = department;
+    }
+    calculateAnnualSalary(bonus){
+        return this.monthlySalary * 12 + bonus;
+    }
+}
 
+let Jim = new Manager("Jim", 10000, "Sales");
+let Mark = new Manager("Mark", 12000, "Human Resources");
+console.log(Jim.calculateAnnualSalary(1800));
+console.log(Mark.calculateAnnualSalary(1200));
+*/
+/*Problem Set 3: Book and Ebook
+class Book{
+    constructor(bookTitle, bookAuthor, bookPublicationYear){
+        this.bookTitle = bookTitle;
+        this.bookAuthor = bookAuthor;
+        this.bookPublicationYear = bookPublicationYear;
+    }
+    get title(){
+        return this.bookTitle;
+    }
+    get author(){
+        return this.bookAuthor;
+    }
+    get publicationYear(){
+        return this.bookPublicationYear;
+    }
+    displayDetails(){
+        console.log(`Title: ${this.title}\nAuthor: ${this.author}\nPublication Year: ${this.publicationYear}`);
+    }
+}
+class Ebook extends Book{
+    constructor(bookTitle, bookAuthor, bookPublicationYear, bookPrice){
+        super(bookTitle, bookAuthor, bookPublicationYear);
+        this.bookPrice = bookPrice;
+    }
+    get price(){
+        return this.bookPrice;
+    }
+    displayDetails(){
+        console.log(`Title: ${this.title}\nAuthor: ${this.author}\nPublication Year: ${this.publicationYear}\nPrice: ${this.price}`);
+    }
+}
+*/
+
+class Animal{
+    constructor(animalSpecies, animalSound){
+        this.animalSpecies = animalSpecies;
+        this.animalSound = animalSound;
+    }
+    get species(){
+        return this.animalSpecies;
+    }
+    get sound(){
+        return this.animalSound;
+    }
+    makeSound(){
+        console.log(`The ${this.species} says ${this.sound}`);
+    }
+}
+class Dog extends Animal{
+    constructor(animalSpecies, animalSound, animalColor){
+        super(animalSpecies, animalSound);
+        this.animalColor = animalColor;
+    }
+    get color(){
+        return this.animalColor;
+    }
+    makeSound(){
+        console.log(`The ${this.color} ${this.species} says ${this.sound}`);
+    }
+}
+
+let Max = new Dog("bloodhound", "woof", "brown");
+Max.makeSound();
