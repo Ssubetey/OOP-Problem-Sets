@@ -310,7 +310,7 @@ class Ebook extends Book{
     }
 }
 */
-
+/*Problem Set 3: Animal and Dog Sound
 class Animal{
     constructor(animalSpecies, animalSound){
         this.animalSpecies = animalSpecies;
@@ -341,3 +341,68 @@ class Dog extends Animal{
 
 let Max = new Dog("bloodhound", "woof", "brown");
 Max.makeSound();
+*/
+/*Problem Set 3: Product and PersonalCareProduct Prices
+class Product{
+    constructor(productID, productName, productPrice){
+        this.productID = productID;
+        this.productName = productName;
+        this.productPrice = productPrice;
+    }
+    get ID(){
+        return this.productID;
+    }
+    get name(){
+        return this.productName;
+    }
+    get price(){
+        return this.productPrice;
+    }
+    totalPrice(numOfItems){
+        return numOfItems * this.productPrice;
+    }
+}
+
+//Using warranty price so it can actually be used in the price calculations, cause warranty period is time lol
+class PersonalCareProduct extends Product{
+    constructor(productID, productName, productPrice, productWarrantyPrice){
+        super(productID, productName, productPrice);
+        this.productWarrantyPrice = productWarrantyPrice;
+    }
+    get warrantyPrice(){
+        return this.productWarrantyPrice;
+    }
+    totalPrice(numOfItems){
+        return numOfItems * this.productPrice + this.warrantyPrice;
+    }
+}
+*/
+/*Problem Set 3: University Departments 
+class University{
+    constructor(uniName, initialDepartment){
+        this.uniName = uniName;
+        this.uniDepartmentList = [initialDepartment];
+    }
+    get name(){
+        return this.uniName;
+    }
+    get departmentList(){
+        return this.uniDepartmentList;
+    }
+    addDepartment(newDepartment){
+        this.departmentList.push(newDepartment);
+    }
+    deleteDepartment(deleteRequest){
+        this.departmentList.splice(this.departmentList.indexOf(deleteRequest), 1);
+    }
+    displayDepartments(){
+        console.log(`${this.name} Department List:\n${this.departmentList.join("\n")}`);
+    }
+}
+
+let uni = new University("UofC", "Com Sci");
+uni.addDepartment("Magic");
+uni.addDepartment("Firearms");
+uni.deleteDepartment("Magic");
+uni.displayDepartments();
+*/
